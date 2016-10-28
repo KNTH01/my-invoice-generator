@@ -6,4 +6,10 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' })
 })
 
+router.get('/invoice', (req, res) => {
+  res.send({
+    success: true
+  })
+})
+
 module.exports = router
