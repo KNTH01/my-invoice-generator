@@ -1,0 +1,27 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div class="pure-u-12">
+    <h1>{{ title }}</h1>
+
+
+    <form class="pure-form pure-form-stacked" action="/generateInvoice" method="post">
+      <fieldset>
+        <legend>Generate a invoice</legend>
+        <label for="name"></label>
+        <input type="text" name="name" placeholder="Name">
+
+        <label for="description"></label>
+        <input type="text" name="description" placeholder="Description">
+
+        <label for="quantity"></label>
+        <input type="number" name="quantity" value="1">
+
+        <label for="price"></label>
+        <input type="number" name="price" value="0">
+
+        <input class="pure-button pure-button-primary" type="submit" value="Generate Invoice">
+      </fieldset>
+    </form>
+  </div>
+{% endblock %}
