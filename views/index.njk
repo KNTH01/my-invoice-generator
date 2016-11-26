@@ -1,27 +1,49 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-  <div class="pure-u-12">
-    <h1>{{ title }}</h1>
+  <div class="columns">
+    <div class="column-12">
+      <h1>{{ title }}</h1>
 
+      <form class="form-horizontal" action="/generateInvoice" method="post">
+        <div class="form-group">
+          <div class="col-4">
+            <label class="form-label" for="name">Name</label>
+          </div>
+          <div class="col-8">
+            <input class="form-input" type="text" name="name" placeholder="Name">
+          </div>
+        </div>
 
-    <form class="pure-form pure-form-stacked" action="/generateInvoice" method="post">
-      <fieldset>
-        <legend>Generate a invoice</legend>
-        <label for="name"></label>
-        <input type="text" name="name" placeholder="Name">
+        <div class="form-group">
+          <div class="col-4">
+            <label class="form-label" for="description">Description</label>
+          </div>
+          <div class="col-8">
+            <input class="form-input" type="text" name="description" placeholder="Description">
+          </div>
+        </div>
 
-        <label for="description"></label>
-        <input type="text" name="description" placeholder="Description">
+        <div class="form-group">
+          <div class="col-4">
+            <label class="form-label" for="quantity">Quantity</label>
+          </div>
+          <div class="col-8">
+            <input class="form-input" type="number" name="quantity" value="1">
+          </div>
+        </div>
 
-        <label for="quantity"></label>
-        <input type="number" name="quantity" value="1">
+        <div class="form-group">
+          <div class="col-4">
+            <label class="form-label" for="price">Price</label>
+          </div>
+          <div class="col-8">
+            <input class="form-input" type="number" name="price" value="0">
+          </div>
+        </div>
 
-        <label for="price"></label>
-        <input type="number" name="price" value="0">
-
-        <input class="pure-button pure-button-primary" type="submit" value="Generate Invoice">
-      </fieldset>
-    </form>
+        <input class="btn btn-primary" type="submit" value="Generate Invoice">
+      </form>
+    </div>
   </div>
 {% endblock %}
